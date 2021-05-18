@@ -6,5 +6,5 @@ Authors:
 - Daniel Tytkowski
 - Jan Skwarek
 
-Copyright © 2019-2021 Jan Skwarek, Daniel Tytkowski, Patryk Rakus. All rights reserved. Do not redistribute without the express written permission.
+Copyright © 2021 Jan Skwarek, Daniel Tytkowski, Patryk Rakus. All rights reserved. Do not redistribute without the express written permission.
 Email: janskwarek@protonmail.ch
