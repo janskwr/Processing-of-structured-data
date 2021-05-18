@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tags>
+  <row Id="1" TagName="hops" Count="17" ExcerptPostId="5062" WikiPostId="5061" />
+  <row Id="2" TagName="history" Count="80" ExcerptPostId="7872" WikiPostId="7871" />
+  <row Id="4" TagName="brewing" Count="69" ExcerptPostId="4880" WikiPostId="4879" />
+  <row Id="5" TagName="serving" Count="35" ExcerptPostId="5109" WikiPostId="5108" />
+  <row Id="6" TagName="temperature" Count="29" ExcerptPostId="304" WikiPostId="303" />
+  <row Id="7" TagName="pilsener" Count="4" />
+  <row Id="9" TagName="inebriation" Count="4" />
+  <row Id="10" TagName="ale" Count="14" ExcerptPostId="5122" WikiPostId="5121" />
+  <row Id="11" TagName="lager" Count="16" ExcerptPostId="5040" WikiPostId="5039" />
+  <row Id="12" TagName="breweries" Count="55" ExcerptPostId="7878" WikiPostId="7877" />
+  <row Id="14" TagName="retail-availiability" Count="3" />
+  <row Id="15" TagName="distribution" Count="14" />
+  <row Id="16" TagName="mulling" Count="3" ExcerptPostId="5142" WikiPostId="5141" />
+  <row Id="17" TagName="ipa" Count="24" ExcerptPostId="619" WikiPostId="618" />
+  <row Id="18" TagName="hangover" Count="8" />
+  <row Id="19" TagName="carbonation" Count="12" />
+  <row Id="20" TagName="drinking" Count="37" ExcerptPostId="7896" WikiPostId="7895" />
+  <row Id="21" TagName="draught" Count="11" />
+  <row Id="22" TagName="bottling" Count="13" ExcerptPostId="5116" WikiPostId="5115" />
+  <row Id="23" TagName="storage" Count="60" ExcerptPostId="615" WikiPostId="614" />
+  <row Id="24" TagName="glassware" Count="26" ExcerptPostId="5107" WikiPostId="5106" />
+  <row Id="26" TagName="aroma" Count="4" />
+  <row Id="27" TagName="imperal-stout" Count="5" ExcerptPostId="5140" WikiPostId="5139" />
+  <row Id="28" TagName="terminology" Count="21" ExcerptPostId="7392" WikiPostId="7391" />
+  <row Id="30" TagName="growlers" Count="8" ExcerptPostId="393" WikiPostId="392" />
+  <row Id="31" TagName="porter" Count="8" />
+  <row Id="32" TagName="stout" Count="18" ExcerptPostId="391" WikiPostId="390" />
+  <row Id="33" TagName="ingredients" Count="46" ExcerptPostId="7894" WikiPostId="7893" />
+  <row Id="34" TagName="saison" Count="3" ExcerptPostId="424" WikiPostId="423" />
+  <row Id="35" TagName="age" Count="9" />
+  <row Id="36" TagName="varieties" Count="5" />
+  <row Id="37" TagName="aging" Count="20" ExcerptPostId="5120" WikiPostId="5119" />
+  <row Id="38" TagName="abv" Count="10" ExcerptPostId="613" WikiPostId="612" />
+  <row Id="40" TagName="health" Count="57" ExcerptPostId="285" WikiPostId="284" />
+  <row Id="41" TagName="water" Count="4" />
+  <row Id="42" TagName="taste" Count="115" ExcerptPostId="283" WikiPostId="282" />
+  <row Id="43" TagName="yeast" Count="16" ExcerptPostId="956" WikiPostId="955" />
+  <row Id="44" TagName="pouring" Count="8" />
+  <row Id="48" TagName="skunking" Count="3" ExcerptPostId="5152" WikiPostId="5151" />
+  <row Id="49" TagName="3.2-beer" Count="2" ExcerptPostId="848" WikiPostId="847" />
+  <row Id="51" TagName="local" Count="25" ExcerptPostId="308" WikiPostId="307" />
+  <row Id="54" TagName="pairing" Count="38" ExcerptPostId="450" WikiPostId="449" />
+  <row Id="56" TagName="buying" Count="12" />
+  <row Id="59" TagName="bottle-conditioning" Count="7" />
+  <row Id="60" TagName="cellaring" Count="4" ExcerptPostId="302" WikiPostId="301" />
+  <row Id="61" TagName="freshness" Count="8" />
+  <row Id="63" TagName="style" Count="36" ExcerptPostId="617" WikiPostId="616" />
+  <row Id="66" TagName="garnish" Count="2" />
+  <row Id="69" TagName="preparation-for-drinking" Count="9" />
+  <row Id="71" TagName="classification" Count="11" />
+  <row Id="75" TagName="specialty-beers" Count="57" ExcerptPostId="7874" WikiPostId="7873" />
+  <row Id="76" TagName="trappist" Count="17" ExcerptPostId="5124" WikiPostId="5123" />
+  <row Id="77" TagName="lambic" Count="3" ExcerptPostId="5148" WikiPostId="5147" />
+  <row Id="79" TagName="preservation" Count="10" />
+  <row Id="82" TagName="alcohol-level" Count="25" ExcerptPostId="7900" WikiPostId="7899" />
+  <row Id="83" TagName="laws" Count="25" ExcerptPostId="7898" WikiPostId="7897" />
+  <row Id="84" TagName="poland" Count="1" ExcerptPostId="281" WikiPostId="280" />
+  <row Id="86" TagName="keg" Count="12" ExcerptPostId="5146" WikiPostId="5145" />
+  <row Id="87" TagName="cicerone" Count="3" />
+  <row Id="88" TagName="restaurants" Count="4" />
+  <row Id="94" TagName="gas" Count="3" />
+  <row Id="96" TagName="ibu" Count="5" ExcerptPostId="2132" WikiPostId="2131" />
+  <row Id="97" TagName="production" Count="8" />
+  <row Id="98" TagName="schwarzbier" Count="2" ExcerptPostId="306" WikiPostId="305" />
+  <row Id="103" TagName="competition" Count="3" />
+  <row Id="109" TagName="cooking" Count="10" />
+  <row Id="110" TagName="nutrition" Count="7" />
+  <row Id="120" TagName="non-alcoholic" Count="17" />
+  <row Id="125" TagName="head" Count="6" ExcerptPostId="504" WikiPostId="503" />
+  <row Id="127" TagName="colour" Count="5" />
+  <row Id="129" TagName="shandy" Count="2" ExcerptPostId="5150" WikiPostId="5149" />
+  <row Id="130" TagName="german-beers" Count="19" ExcerptPostId="5114" WikiPostId="5113" />
+  <row Id="132" TagName="united-states" Count="10" />
+  <row Id="133" TagName="bottles" Count="16" ExcerptPostId="5118" WikiPostId="5117" />
+  <row Id="134" TagName="foam" Count="7" />
+  <row Id="136" TagName="cans" Count="9" ExcerptPostId="5136" WikiPostId="5135" />
+  <row Id="137" TagName="additives" Count="3" />
+  <row Id="138" TagName="resources" Count="3" />
+  <row Id="140" TagName="filtering" Count="4" />
+  <row Id="142" TagName="recommendations" Count="72" ExcerptPostId="7876" WikiPostId="7875" />
+  <row Id="144" TagName="finings" Count="2" ExcerptPostId="593" WikiPostId="592" />
+  <row Id="153" TagName="hefeweizen" Count="5" ExcerptPostId="5144" WikiPostId="5143" />
+  <row Id="155" TagName="flavor" Count="40" ExcerptPostId="3271" WikiPostId="3270" />
+  <row Id="158" TagName="pennsylvania" Count="4" ExcerptPostId="923" WikiPostId="922" />
+  <row Id="166" TagName="cooling" Count="5" />
+  <row Id="167" TagName="fermentation" Count="13" ExcerptPostId="7086" WikiPostId="7085" />
+  <row Id="168" TagName="liquor" Count="17" ExcerptPostId="7904" WikiPostId="7903" />
+  <row Id="170" TagName="malt" Count="2" ExcerptPostId="3426" WikiPostId="3425" />
+  <row Id="172" TagName="micropub" Count="7" />
+  <row Id="175" TagName="beer-cocktails" Count="9" ExcerptPostId="5138" WikiPostId="5137" />
+  <row Id="176" TagName="science" Count="6" />
+  <row Id="181" TagName="deposit" Count="1" ExcerptPostId="5129" WikiPostId="5128" />
+  <row Id="182" TagName="cider" Count="7" ExcerptPostId="4860" WikiPostId="4859" />
+  <row Id="184" TagName="imperial-ipa" Count="3" ExcerptPostId="5133" WikiPostId="5132" />
+  <row Id="186" TagName="wine" Count="124" ExcerptPostId="7870" WikiPostId="7869" />
+  <row Id="188" TagName="tequila" Count="9" ExcerptPostId="5053" WikiPostId="5052" />
+  <row Id="189" TagName="scotch" Count="18" ExcerptPostId="5131" WikiPostId="5130" />
+  <row Id="190" TagName="sake" Count="7" ExcerptPostId="5055" WikiPostId="5054" />
+  <row Id="192" TagName="red-wine" Count="28" ExcerptPostId="5017" WikiPostId="5016" />
+  <row Id="193" TagName="whiskey" Count="49" ExcerptPostId="5049" WikiPostId="5048" />
+  <row Id="194" TagName="bourbon" Count="6" ExcerptPostId="5051" WikiPostId="5050" />
+  <row Id="200" TagName="cocktails" Count="35" ExcerptPostId="5105" WikiPostId="5104" />
+  <row Id="201" TagName="vodka" Count="14" ExcerptPostId="5111" WikiPostId="5110" />
+  <row Id="202" TagName="gin" Count="13" ExcerptPostId="5103" WikiPostId="5102" />
+  <row Id="204" TagName="craft-beers" Count="28" ExcerptPostId="7902" WikiPostId="7901" />
+  <row Id="208" TagName="belgian-beers" Count="9" />
+  <row Id="211" TagName="germany" Count="3" />
+  <row Id="213" TagName="distillation" Count="10" ExcerptPostId="6445" WikiPostId="6444" />
+  <row Id="214" TagName="spirits" Count="48" ExcerptPostId="7892" WikiPostId="7891" />
+  <row Id="215" TagName="mead" Count="10" ExcerptPostId="6251" WikiPostId="6250" />
+  <row Id="217" TagName="sour-beer" Count="3" />
+  <row Id="220" TagName="occasions" Count="3" />
+  <row Id="231" TagName="distilleries" Count="6" />
+  <row Id="237" TagName="bartending" Count="4" />
+  <row Id="239" TagName="holidays" Count="7" />
+  <row Id="240" TagName="absinthe" Count="4" ExcerptPostId="7802" WikiPostId="7801" />
+  <row Id="244" TagName="prohibition" Count="4" />
+  <row Id="250" TagName="home-brew" Count="12" />
+  <row Id="253" TagName="tradition" Count="6" />
+  <row Id="256" TagName="mixers" Count="7" />
+  <row Id="259" TagName="liqueur" Count="13" ExcerptPostId="8005" WikiPostId="8004" />
+  <row Id="262" TagName="price" Count="8" ExcerptPostId="8013" WikiPostId="8012" />
+  <row Id="263" TagName="alcohol" Count="21" />
+  <row Id="265" TagName="drink" Count="22" ExcerptPostId="7906" WikiPostId="7905" />
+  <row Id="273" TagName="substitutions" Count="3" />
+  <row Id="276" TagName="differences" Count="5" />
+  <row Id="280" TagName="quality" Count="8" />
+  <row Id="283" TagName="identification" Count="5" />
+  <row Id="286" TagName="canada" Count="5" />
+  <row Id="287" TagName="europe" Count="4" />
+  <row Id="295" TagName="consumption" Count="2" />
+  <row Id="301" TagName="champagne" Count="7" />
+  <row Id="304" TagName="rum" Count="11" />
+  <row Id="306" TagName="singapore" Count="2" />
+  <row Id="307" TagName="australia" Count="5" />
+  <row Id="308" TagName="dubbel" Count="3" />
+  <row Id="309" TagName="tripel" Count="4" />
+  <row Id="314" TagName="online" Count="2" ExcerptPostId="7506" WikiPostId="7505" />
+  <row Id="324" TagName="barrels" Count="2" />
+  <row Id="326" TagName="whisky" Count="6" ExcerptPostId="7987" WikiPostId="7986" />
+  <row Id="328" TagName="home-brewing" Count="5" />
+  <row Id="329" TagName="layered-drinks" Count="3" />
+  <row Id="335" TagName="brittany" Count="2" />
+  <row Id="336" TagName="france" Count="2" />
+  <row Id="337" TagName="cognac" Count="2" />
+  <row Id="339" TagName="brazil" Count="2" />
+  <row Id="342" TagName="mushrooms" Count="1" ExcerptPostId="8011" WikiPostId="8010" />
+  <row Id="343" TagName="recipes" Count="5" />
+  <row Id="349" TagName="gluten-free" Count="2" />
+  <row Id="351" TagName="labels" Count="1" />
+  <row Id="352" TagName="bitters" Count="1" />
+  <row Id="353" TagName="best-before-date" Count="1" />
+  <row Id="354" TagName="belgium" Count="1" />
+  <row Id="355" TagName="netherlands" Count="1" />
+  <row Id="356" TagName="measure" Count="1" />
+  <row Id="357" TagName="vermouth" Count="1" />
+  <row Id="358" TagName="reference-request" Count="1" />
+  <row Id="359" TagName="alcohol-infusions" Count="1" />
+  <row Id="360" TagName="sipping" Count="1" />
+</tags>
