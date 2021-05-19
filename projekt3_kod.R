@@ -51,3 +51,19 @@ fix_users <- function(Users) {
 
 BeerPostsDT <- fix_posts(load_xml("beer_stackexchange/Posts.xml"))
 BeerUsersDT <- fix_users(load_xml("beer_stackexchange/Users.xml"))
+
+# Jakie aspekty najbardziej interesują ludzi
+most_viewed_tags <- function(Posts) {
+  x <- Posts[, lapply(Tags, function(x) sub('.','',unlist(tstrsplit(x ,">")))),
+             by = Id] 
+  setkey(x, Id)
+  setkey(Posts, Id)
+  x <- x[Posts[, -"Tags"], nomatch=0]
+  setnames(x, "V1", "Tag")
+  x <- x[PostTypeId==1, c(1,2,6,7)]
+  x <- x[, .(TotalViews=sum(ViewCount)), by=Tag]
+  x[order(x$TotalViews, decreasing=TRUE)][1:25]
+}
+
+
+
