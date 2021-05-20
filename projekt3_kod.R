@@ -49,10 +49,18 @@ fix_users <- function(Users) {
             AboutMe = clear_html(AboutMe))
 }
 
+fix_comments <- function(Comments) {
+  transform(Comments, Id = as.numeric(Id),
+            PostId = as.numeric(PostId),
+            Score = as.numeric(Score),
+            UserId = as.numeric(UserId))
+}
+
+BeerCommentsDT <- fix_comments(load_xml("beer_stackexchange/Comments.xml"))
 BeerPostsDT <- fix_posts(load_xml("beer_stackexchange/Posts.xml"))
 BeerUsersDT <- fix_users(load_xml("beer_stackexchange/Users.xml"))
 
-# Jakie aspekty najbardziej interesują ludzi
+# Jakie tematy najbardziej interesują ludzi
 most_viewed_tags <- function(Posts) {
   x <- Posts[, lapply(Tags, function(x) sub('.','',unlist(tstrsplit(x ,">")))),
              by = Id] 
@@ -65,5 +73,29 @@ most_viewed_tags <- function(Posts) {
   x[order(x$TotalViews, decreasing=TRUE)][1:25]
 }
 
-
+# Miesieczna aktywnosc (liczba postow i komentarzy)
+activity_over_time <- function(Posts, Comments) {
+  Dat1 <- Comments[, .(CreationDate)]
+  Dat2 <- Posts[, .(CreationDate)]
+  
+  Dat1[, Id:="Posts"]
+  Dat2[, Id:="Comments"]
+  
+  setkey(Dat1, Id)
+  setkey(Dat2, Id)
+  
+  x <- merge(Dat1, Dat2, all=TRUE)
+  x[Id=="Posts", .(CreationDate.y=CreationDate.x)]
+  x <- transform(x, "CreationDate"=fifelse(Id=="Posts", CreationDate.x,
+                                           CreationDate.y))
+  x[, c("Id", "CreationDate.x", "CreationDate.y"):=NULL]
+  
+  x[, c("Year", "Month", "Day") := tstrsplit(CreationDate, "-")]
+  x[, Day:=substr(Day, 1, 2)]
+  
+  x[, CreationDate:=NULL]
+  x <- x[, .(Activity=.N), by=.(Year, Month)]
+  transform(x, Year=as.numeric(Year), Month=as.numeric(Month))
+  
+}
 
