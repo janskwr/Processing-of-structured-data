@@ -7,8 +7,6 @@ if ( options()$stringsAsFactors )
 # duże pliki to używać będziemy data.table bo jest najszybszy
 library(XML)
 library(data.table)
-
-
 # To zamienia xml na dataframe
 # file to lokacja pliku
 load_xml <- function(file) {
@@ -60,6 +58,14 @@ BeerCommentsDT <- fix_comments(load_xml("beer_stackexchange/Comments.xml"))
 BeerPostsDT <- fix_posts(load_xml("beer_stackexchange/Posts.xml"))
 BeerUsersDT <- fix_users(load_xml("beer_stackexchange/Users.xml"))
 
+HealthCommentsDT <- fix_comments(load_xml("health_stackexchange/Comments.xml"))
+HealthPostsDT <- fix_posts(load_xml("health_stackexchange/Posts.xml"))
+HealthUsersDT <- fix_users(load_xml("health_stackexchange/Users.xml"))
+
+GamingCommentsDT <- fix_comments(load_xml("gaming_stackexchange/Comments.xml"))
+GamingPostsDT <- fix_posts(load_xml("gaming_stackexchange/Posts.xml"))
+GamingUsersDT <- fix_users(load_xml("gaming_stackexchange/Users.xml"))
+
 # Jakie tematy najbardziej interesują ludzi
 most_viewed_tags <- function(Posts) {
   x <- Posts[, lapply(Tags, function(x) sub('.','',unlist(tstrsplit(x ,">")))),
@@ -70,7 +76,7 @@ most_viewed_tags <- function(Posts) {
   setnames(x, "V1", "Tag")
   x <- x[PostTypeId==1, c(1,2,6,7)]
   x <- x[, .(TotalViews=sum(ViewCount)), by=Tag]
-  x[order(x$TotalViews, decreasing=TRUE)][1:25]
+  x[order(x$TotalViews, decreasing=TRUE)]
 }
 
 # Miesieczna aktywnosc (liczba postow i komentarzy)
@@ -96,6 +102,70 @@ activity_over_time <- function(Posts, Comments) {
   x[, CreationDate:=NULL]
   x <- x[, .(Activity=.N), by=.(Year, Month)]
   transform(x, Year=as.numeric(Year), Month=as.numeric(Month))
-  
 }
+
+# haot <- activity_over_time(HealthPostsDT, HealthCommentsDT)
+# gaot <- activity_over_time(GamingPostsDT, GamingCommentsDT)
+# baot <- activity_over_time(BeerPostsDT, BeerCommentsDT)
+
+plot_aot <- function(aot1, aot2, aot3) {
+  aot1 <- aot1[Year > 2015,]
+  aot2 <- aot2[Year > 2015,]
+  aot3 <- aot3[Year > 2015,]
+  max_act1 <- max(aot1$Activity)
+  aot1 <- aot1[, c("ActivityPercentage") := round(aot1$Activity*100/max_act1, 2)]
+  max_act2 <- max(aot2$Activity)
+  aot2 <- aot2[, c("ActivityPercentage") := round(aot2$Activity*100/max_act2, 2)]
+  max_act3 <- max(aot3$Activity)
+  aot3 <- aot3[, c("ActivityPercentage") := round(aot3$Activity*100/max_act3, 2)]
+  
+  plot.new()
+  old_mar <- par('mar')
+  old_xaxt <- par('xaxt')
+  par(mar=c(5,5,5,5))
+  par(xaxt="n")
+  
+  plot(aot1$ActivityPercentage, type="l", col='blue', xlab="ROk",
+       ylab="Procent najwyzszej aktywnosci forum", main="Aktywność",
+       ylim=c(0,100), lty=1, lwd=2, cex.lab=0.8)
+  par(xaxt='s')
+  axis(1, at=seq(0,61,by=12), labels=2016:2021)
+  lines(aot2$ActivityPercentage, type="l",lty = 2,col='green', lwd=2)
+  lines(aot3$ActivityPercentage, type="l",lty = 3, col='red', lwd=2)
+  
+  legend(1, 15, legend=c("Health", "Gaming", "Beer"),
+         col=c("blue", "green", "red"), lty=1:3, cex=0.7,
+         box.lty=0)
+  par(mar=old_mar)
+  par(xaxt=old_xaxt)
+  # Wzrost w Gaming związany z wydaniem Pokemon GO, w Health z Covidem
+}
+
+# plot_aot(haot, gaot, baot)
+
+hmvt <- most_viewed_tags(HealthPostsDT)
+gmvt <- most_viewed_tags(GamingPostsDT)
+bmvt <- most_viewed_tags(BeerPostsDT)
+# 22 pierwsze tagi ~~ 50% ilosci wyswietlen
+
+plot_mvt <- function(mvt) {
+  
+  mvt <- mvt[1:15]
+  plot.new()
+  old_mar <- par('mar')
+  old_las <- par('las')
+  par(las = 2)
+  par(mar = c(6,10,4,4))
+  
+  barplot(mvt$TotalViews/1000, names.arg=mvt$Tag, horiz=TRUE, cex.names=0.75,
+          col='cyan', space=0, main="Najpopularniejsze tagi", cex.axis=0.75,
+          xlab="Liczba wyświetleń w tys.")
+  
+  par(mar = old_mar)
+  par(las = old_las)
+}
+
+plot_mvt(hmvt)
+plot_mvt(gmvt)
+plot_mvt(bmvt)
 
