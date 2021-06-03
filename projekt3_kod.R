@@ -7,6 +7,7 @@ if ( options()$stringsAsFactors )
 # duże pliki to używać będziemy data.table bo jest najszybszy
 library(XML)
 library(data.table)
+library(stringi)
 
 
 # To zamienia xml na dataframe
@@ -229,8 +230,17 @@ most_answers_plot(answersHoursHealth)
 
 
 #najwiecej pytan o minecraft - nie dziala jeszcze
-Minecraft <- function(dt) {
-  cols <- grep(".Minecraft.", names(dt), value = TRUE)
-  dt[, cols, with = FALSE]
+MC_answers <- function(Posts) {
+  
+  x <- Posts[PostTypeId == 1]
+  x <- MC_interest(x)
+  x <- x[,.(.N), by = substr(CreationDate,1,4) ]
+  
 }
 
+MC_interest <- function(dt) {
+  dt <- dt[stri_detect_regex(dt$Title,'minecraft', ignoreCases = TRUE) == TRUE]
+}
+
+McPosts <- MC_answers(GamingPostsDT)
+barplot(McPosts$N, names.arg = McPosts$substr, col = 'cyan', xlab = "Rok", ylab = "Ilość pytań")
