@@ -7,6 +7,8 @@ if ( options()$stringsAsFactors )
 # duże pliki to używać będziemy data.table bo jest najszybszy
 library(XML)
 library(data.table)
+
+
 # To zamienia xml na dataframe
 # file to lokacja pliku
 load_xml <- function(file) {
@@ -168,4 +170,3 @@ plot_mvt <- function(mvt) {
 plot_mvt(hmvt)
 plot_mvt(gmvt)
 plot_mvt(bmvt)
-
