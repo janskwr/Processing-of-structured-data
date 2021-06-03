@@ -106,9 +106,9 @@ activity_over_time <- function(Posts, Comments) {
   transform(x, Year=as.numeric(Year), Month=as.numeric(Month))
 }
 
-# haot <- activity_over_time(HealthPostsDT, HealthCommentsDT)
-# gaot <- activity_over_time(GamingPostsDT, GamingCommentsDT)
-# baot <- activity_over_time(BeerPostsDT, BeerCommentsDT)
+haot <- activity_over_time(HealthPostsDT, HealthCommentsDT)
+gaot <- activity_over_time(GamingPostsDT, GamingCommentsDT)
+baot <- activity_over_time(BeerPostsDT, BeerCommentsDT)
 
 plot_aot <- function(aot1, aot2, aot3) {
   aot1 <- aot1[Year > 2015,]
@@ -143,7 +143,7 @@ plot_aot <- function(aot1, aot2, aot3) {
   # Wzrost w Gaming związany z wydaniem Pokemon GO, w Health z Covidem
 }
 
-# plot_aot(haot, gaot, baot)
+plot_aot(haot, gaot, baot)
 
 hmvt <- most_viewed_tags(HealthPostsDT)
 gmvt <- most_viewed_tags(GamingPostsDT)
@@ -170,3 +170,67 @@ plot_mvt <- function(mvt) {
 plot_mvt(hmvt)
 plot_mvt(gmvt)
 plot_mvt(bmvt)
+
+#Godziny najwiekszej aktywnosci na forach
+
+activity_hours <- function(Posts, Comments) {
+  
+  x <- Posts[, .(Id, CreationHour = substr(CreationDate,12,13))]
+  x <- x[,.(.N), by = "CreationHour"]
+  y <- Comments[,.(Id, CreationHour = substr(CreationDate,12,13))]
+  y <- y[,.(.N), by = "CreationHour"]
+  setkey(x,CreationHour)
+  setkey(y,CreationHour)
+  x <- merge(x, y, all = TRUE)
+  setkey(x,CreationHour)
+  x <- x[,.(CreationHour,NumberOfPostsAndComms = N.y + N.x)]
+  #x <- x[order(-NumberOfPostsAndComms),]
+}
+# wykres
+plot_activity <- function(Activity) {
+  
+  
+  barplot(Activity$NumberOfPostsAndComms, names.arg = Activity$CreationHour,col = c('red','green'), xlab = "Godzina utworzenia postu lub komentarza", ylab = "Ilosc", space = 0)
+  
+}
+
+ah <- activity_hours(BeerPostsDT, BeerCommentsDT)
+ahGaming <- activity_hours(GamingPostsDT,GamingCommentsDT)
+ahHealth <- activity_hours(HealthPostsDT, HealthCommentsDT)
+
+plot_activity(ah)
+plot_activity(ahGaming)
+plot_activity(ahHealth)
+
+
+# godziny w których najwięcej użytkowników odpowiada
+most_answers_hours <- function(Posts) {
+  x <- Posts[, .(Id, PostTypeId, CreationHour = substr(CreationDate,12,13))]
+  x <- x[PostTypeId == 2]
+  x <- x[,.(.N), by = "CreationHour"]
+  x <- x[order(CreationHour)]
+}
+
+most_answers_plot <- function(anserwsHours) {
+  
+  barplot(anserwsHours$N, names.arg = anserwsHours$CreationHour,col = c('red','green'), xlab = "Godzina udzielenia odpowiedźi", ylab = "Ilosc", space = 0, axisnames = TRUE)
+  
+}
+
+
+
+answersHoursBeer <- most_answers_hours(BeerPostsDT)
+answersHoursGaming <- most_answers_hours(GamingPostsDT)
+answersHoursHealth <- most_answers_hours(HealthPostsDT)
+most_answers_plot(answersHoursBeer)
+most_answers_plot(answersHoursGaming)
+most_answers_plot(answersHoursHealth)
+
+
+
+#najwiecej pytan o minecraft - nie dziala jeszcze
+Minecraft <- function(dt) {
+  cols <- grep(".Minecraft.", names(dt), value = TRUE)
+  dt[, cols, with = FALSE]
+}
+
