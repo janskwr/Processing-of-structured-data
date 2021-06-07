@@ -20,8 +20,6 @@ library(data.table)
 library(stringi)
 
 
-# funkcja load_xml:=
-#   parametr file:= {lokalizacja pliku}
 # funkcja parsuje plik file w formacie XML i generuje strukture jezyka R repre-
 # zentujaca drzewo XML. Nastepnie wymusza na objekcie typ 'data.table'.
 load_xml <- function(file) {
@@ -32,8 +30,6 @@ load_xml <- function(file) {
 }
 
 
-# funkcja clear_html:=
-#   html:= {sekcja mogoca zawierac tagi}
 # Funkcja usuwa wszystkie tagi z html.
 clear_html <- function(html) {
   return(gsub("<.*?>", "", html))
@@ -79,19 +75,24 @@ fix_comments <- function(Comments) {
             UserId = as.numeric(UserId))
 }
 
+
+# Zastosowujemy formatowanie dla poszczegolnych paczek. Najpierw piwo.
 BeerCommentsDT <- fix_comments(load_xml("beer_stackexchange/Comments.xml"))
 BeerPostsDT <- fix_posts(load_xml("beer_stackexchange/Posts.xml"))
 BeerUsersDT <- fix_users(load_xml("beer_stackexchange/Users.xml"))
+
 
 HealthCommentsDT <- fix_comments(load_xml("health_stackexchange/Comments.xml"))
 HealthPostsDT <- fix_posts(load_xml("health_stackexchange/Posts.xml"))
 HealthUsersDT <- fix_users(load_xml("health_stackexchange/Users.xml"))
 
+
 GamingCommentsDT <- fix_comments(load_xml("gaming_stackexchange/Comments.xml"))
 GamingPostsDT <- fix_posts(load_xml("gaming_stackexchange/Posts.xml"))
 GamingUsersDT <- fix_users(load_xml("gaming_stackexchange/Users.xml"))
 
-# Jakie tematy najbardziej interesują ludzi
+
+# Funkcja analizujaca jakie tematy najbardziej interesuja uzytkownikow.
 most_viewed_tags <- function(Posts) {
   x <- Posts[, lapply(Tags, function(x) sub('.','',unlist(tstrsplit(x ,">")))),
              by = Id] 
@@ -104,7 +105,9 @@ most_viewed_tags <- function(Posts) {
   x[order(x$TotalViews, decreasing=TRUE)]
 }
 
-# Miesieczna aktywnosc (liczba postow i komentarzy)
+
+# Sprawdzamy aktywnosc uzytkownikow w czasie. Definiuje ja liczba postow
+# i komentarzy w poszczegolnych watkach.
 activity_over_time <- function(Posts, Comments) {
   Dat1 <- Comments[, .(CreationDate)]
   Dat2 <- Posts[, .(CreationDate)]
@@ -133,6 +136,8 @@ haot <- activity_over_time(HealthPostsDT, HealthCommentsDT)
 gaot <- activity_over_time(GamingPostsDT, GamingCommentsDT)
 baot <- activity_over_time(BeerPostsDT, BeerCommentsDT)
 
+
+# Projektujemy wykres porównawczy.
 plot_aot <- function(aot1, aot2, aot3) {
   aot1 <- aot1[Year > 2015,]
   aot2 <- aot2[Year > 2015,]
@@ -163,16 +168,32 @@ plot_aot <- function(aot1, aot2, aot3) {
          box.lty=0)
   par(mar=old_mar)
   par(xaxt=old_xaxt)
-  # Wzrost w Gaming związany z wydaniem Pokemon GO, w Health z Covidem
 }
 
+
+# Generujemy wykres.
 plot_aot(haot, gaot, baot)
 
+
+# Analiza odchylen:
+# 1. Wzrost zainteresowania Grami w połowie 2016 roku spowodowany premiera
+#    viralowej gry Pokemon GO na Androida i IOS.
+# 2. Wzrost zainteresowania Zdrowiem w 2020 roku zwiazany jest z epidemia
+#    koronawirusa na swiecie.
+# 3. Wzrost zainteresowania w srodku 2017 roku Piwem moze byc spowodowany
+#    slynna juz partia piw pewnej ukrainskiej browarni ktora postanowila
+#    wypuscic serie piw majacych na etykietach swiatowych liderow. Na jednym z
+#    nich pojawil sie Donald Trump. Zapoczatkowala to pewien trend, w ktorym 
+#    przerozne browarnie z calego swiata umieszczaly Trump'a na swoich etykietach.
+
+
+# 22 pierwsze tagi ~~ 50% ilosci wyswietlen
 hmvt <- most_viewed_tags(HealthPostsDT)
 gmvt <- most_viewed_tags(GamingPostsDT)
 bmvt <- most_viewed_tags(BeerPostsDT)
-# 22 pierwsze tagi ~~ 50% ilosci wyswietlen
 
+
+# Projektujemy wykres najpopularniejszych tagów w poszczegolnych kategoriach.
 plot_mvt <- function(mvt) {
   
   mvt <- mvt[1:15]
@@ -190,14 +211,34 @@ plot_mvt <- function(mvt) {
   par(las = old_las)
 }
 
+
+# Generujemy wykresy.
 plot_mvt(hmvt)
 plot_mvt(gmvt)
 plot_mvt(bmvt)
 
-#Godziny najwiekszej aktywnosci na forach
 
+# W ciagu ostatnich lat spoleczenstwo bardzo zainteresowalo sie zdrowym trybem
+# zycia. A jak wiadomo nie ma zdrowego trybu zycia bez diety. Weganstwo mozna by
+# powiedziec ze stalo sie w pewnym momencie modne, szczegolnie wsrod mieszkancow
+# wielkich miast i klasy sredniej. Ostatnie lata byly wyjatkowe plodne jezeli
+# chodzi o powstanie firm kateringowych oferujacych 'pudelkowa diete na dowoz'.
+# Widac wiec ze trend zostal zauwazony.
+
+
+# Jezeli chodzi o gry to nieprzerwanie od kilku lat kroluje Minecraft. Gra nadal
+# sie cieszy mianem najpopularniejszej gry na swiecie. Drugi jest Skyrim, ktory
+# przezywal w ciagu ostatnich lat druga mlodosc. W 2016 roku wyszla jego zrema-
+# sterowana wersja. Ponadto gra, rok pozniej, doczekala sie wersji VR.
+
+
+# Smak to glowna, najwazniejsza cecha kazdego piwa. 'Zdrowie' na drugim miejscu
+# potwierdza hipoteze z poprzedniego wykresu. Zdrowe zycie jest modne.
+
+
+# Funkcja ta, na podstawie zamieszczanych przez uzytkownikow postow i komentarzy
+# analizuje 'najgoretsze' godziny.
 activity_hours <- function(Posts, Comments) {
-  
   x <- Posts[, .(Id, CreationHour = substr(CreationDate,12,13))]
   x <- x[,.(.N), by = "CreationHour"]
   y <- Comments[,.(Id, CreationHour = substr(CreationDate,12,13))]
@@ -209,24 +250,44 @@ activity_hours <- function(Posts, Comments) {
   x <- x[,.(CreationHour,NumberOfPostsAndComms = N.y + N.x)]
   #x <- x[order(-NumberOfPostsAndComms),]
 }
-# wykres
+
+
+# Ustawiamy wykres.
 plot_activity <- function(Activity) {
-  
-  
   barplot(Activity$NumberOfPostsAndComms, names.arg = Activity$CreationHour,col = c('red','green'), xlab = "Godzina utworzenia postu lub komentarza", ylab = "Ilosc", space = 0)
-  
 }
+
 
 ah <- activity_hours(BeerPostsDT, BeerCommentsDT)
 ahGaming <- activity_hours(GamingPostsDT,GamingCommentsDT)
 ahHealth <- activity_hours(HealthPostsDT, HealthCommentsDT)
 
+
+# Generujemy wykresy.
 plot_activity(ah)
 plot_activity(ahGaming)
 plot_activity(ahHealth)
 
 
-# godziny w których najwięcej użytkowników odpowiada
+# Wykres prezentujący najpopularniejsze godziny utworzenia postu lub komentarza
+# w watkach dotyczacych piwa jasno wskazuje ze milosnicy tego trunku uaktywniaja
+# sie dopiero popoludniu. Nie jest to dziwne patrzac na to w jaki sposob dziala
+# alkohol.
+
+
+# W przypadku gier rozstrzal jest troche mniejszy ale wyglada podobnie. Ludzie
+# oddaja sie rozrywkom czy relaksowi raczej w pozniejszych godzinach dnia.
+
+
+# W przypadku Zdrowia sprawa ma sie nieco inaczej. Istnieje tutaj oczywiscie
+# rowniez przewaga godzin pozniejszych ale roznica miedzy innymi godzinami jest
+# znacznie mniejsza. Sugeruje to ze ludzie jednak sa sklonni rozmawiac o swoim
+# zdrowiu w kazdej chwili bo jak wiadomo zdrowie to sprawa wazna, a nie jak w 
+# przypadku piwa i gier - w wolnym czasie.
+
+
+# Funkcja sprawdza, w ktorych godzinach najwiecej uzytkownikow jest sklonna
+# komus odpowiedziec.
 most_answers_hours <- function(Posts) {
   x <- Posts[, .(Id, PostTypeId, CreationHour = substr(CreationDate,12,13))]
   x <- x[PostTypeId == 2]
@@ -234,21 +295,28 @@ most_answers_hours <- function(Posts) {
   x <- x[order(CreationHour)]
 }
 
-most_answers_plot <- function(anserwsHours) {
-  
-  barplot(anserwsHours$N, names.arg = anserwsHours$CreationHour,col = c('red','green'), xlab = "Godzina udzielenia odpowiedźi", ylab = "Ilosc", space = 0, axisnames = TRUE)
-  
-}
 
+# Projektujemy wykres.
+most_answers_plot <- function(anserwsHours) {
+  barplot(anserwsHours$N, names.arg = anserwsHours$CreationHour,col = c('red','green'), xlab = "Godzina udzielenia odpowiedźi", ylab = "Ilosc", space = 0, axisnames = TRUE)
+}
 
 
 answersHoursBeer <- most_answers_hours(BeerPostsDT)
 answersHoursGaming <- most_answers_hours(GamingPostsDT)
 answersHoursHealth <- most_answers_hours(HealthPostsDT)
+
+
+# Generujemy wykresy.
 most_answers_plot(answersHoursBeer)
 most_answers_plot(answersHoursGaming)
 most_answers_plot(answersHoursHealth)
 
+
+# Wykresy wygladaja bardzo podobnie do tych poprzednich. Potwierdzaja tylko 
+# wyprowadzone przez nas hipotezy. Jest jednak subtelna roznica. Wykres Zdrowia
+# bardziej upodabnia sie do wykresu gier. Ludzie podchodza do swojego zdrowia
+# bardzo powaznie, ale jezeli chodzi o zdrowie innych - moze zaczekac.
 
 
 #najwiecej pytan o minecraft - nie dziala jeszcze
