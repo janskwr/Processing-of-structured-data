@@ -1,17 +1,29 @@
+# -----------------------------------------------------------------------------
+# Program analizuje wybrane fora z portalu stackexchange.com i sporzadza
+# na ich podstawie szczegolowe wykresy. W szczegolnosci odpowiada on na
+# sformulowane przez nas pytania i tezy.
+# -----------------------------------------------------------------------------
+
+
+# Traktujemy napisy jako zwykle napisy, a nie jako elementy/parametry. Dla
+# starszych wersji GNU R domyślnie traktujemy je jako elementy/parametry.
 if ( options()$stringsAsFactors )
-  options(stringsAsFactors=FALSE) # dla R w wersji < 4.0
+  options(stringsAsFactors=FALSE)
 
 
-# install.packages('XML')
-# chyba że znacie lepszy sposób na wczytanie .xml
-# duże pliki to używać będziemy data.table bo jest najszybszy
+# Wczytujemy potrzebne paczki. W projekcie będziemy używać data.table, poniewaz
+# jest to srednio najszybszy i najwydajniejszy sposob pracy na duzych plikach.
+# Stringi pozwalaja nam w wygodny sposob operowac napisami, natomiast XML poz-
+# wala parsowac i generowac XML w R.
 library(XML)
 library(data.table)
 library(stringi)
 
 
-# To zamienia xml na dataframe
-# file to lokacja pliku
+# funkcja load_xml:=
+#   parametr file:= {lokalizacja pliku}
+# funkcja parsuje plik file w formacie XML i generuje strukture jezyka R repre-
+# zentujaca drzewo XML. Nastepnie wymusza na objekcie typ 'data.table'.
 load_xml <- function(file) {
   xml <- xmlTreeParse(file,
                       useInternalNodes = TRUE)
@@ -19,12 +31,18 @@ load_xml <- function(file) {
                                  function(x)as.list(xmlAttrs(x))), fill=TRUE))
 }
 
-# To usuwa tagi z html (np. <p></p>)
+
+# funkcja clear_html:=
+#   html:= {sekcja mogoca zawierac tagi}
+# Funkcja usuwa wszystkie tagi z html.
 clear_html <- function(html) {
   return(gsub("<.*?>", "", html))
 }
 
-# Tylko ze load_xml traktuje wszystko jako stringi wiec trzeba pozmieniać XD
+
+# Funkcja load_xml wszystko bierze jako napisy. Szereg funkcji naprawiajacych
+# formatowanie (konwertujemy poszczegolne kolumny do 'numeric', usuwamy tagi).
+# Funkcja przygotowuje 'Posts' do analizy.
 fix_posts <- function(Posts) {
   transform(Posts, Id = as.numeric(Id),
             PostTypeId = as.numeric(PostTypeId),
@@ -40,6 +58,8 @@ fix_posts <- function(Posts) {
             Body = clear_html(Body))
 }
 
+
+# Naprawiamy 'Users'.
 fix_users <- function(Users) {
   transform(Users, Id = as.numeric(Id),
             Reputation = as.numeric(Reputation),
@@ -50,6 +70,8 @@ fix_users <- function(Users) {
             AboutMe = clear_html(AboutMe))
 }
 
+
+# Poprawiamy 'Comments'.
 fix_comments <- function(Comments) {
   transform(Comments, Id = as.numeric(Id),
             PostId = as.numeric(PostId),
@@ -244,3 +266,4 @@ MC_interest <- function(dt) {
 
 McPosts <- MC_answers(GamingPostsDT)
 barplot(McPosts$N, names.arg = McPosts$substr, col = 'cyan', xlab = "Rok", ylab = "Ilość pytań")
+
