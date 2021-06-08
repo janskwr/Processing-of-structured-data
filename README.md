@@ -109,7 +109,7 @@ It's our project for Processing of structured data. It basically analyzes data f
    sudo chmod +x requirements.sh
    ./requirements.sh
    ```
-5. Unpack 7z folders with data and place them in appropriately named folders created inside project directory:
+5. Extract 7z files with data to appropriately named folders created inside project directory:
    ```console
    gaming.stackexchange.com.7z ---> gaming_stackexchange
    beer.stackexchange.com.7z ---> beer_stackexchange
