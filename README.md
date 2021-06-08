@@ -53,6 +53,35 @@ I HAVE KEPT HIS COMMENTS
 
 
 
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Our analysis ][product-screenshot]](https://www.youtube.com/watch?v=3hK8VyXFkZE "Our analysis")
+
+It's our project for Processing of structured data. It basically analyzes data from large stackexchange and creates cool diagrams. We explain everything in the video above. Click on a photo and it will redirect you to youtube. 
+
+
 # IiAD-PDU-PD3
 Processing of structured data - project 3.
 Copyright © 2021 Patryk Rakus, Jan Skwarek, Daniel Tytkowski. All rights reserved. Do not redistribute. Do not reproduce or use in any manner whatsoever without the express written permission.  
@@ -115,5 +144,5 @@ Daniel Tytkowski (Email:)
 <!--
 [linkedin-shield]: [example] https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: [example] https://linkedin.com/in/othneildrew
-[product-screenshot]: [example] images/screenshot.png
 -->
+[product-screenshot]: images/screenshot.png
