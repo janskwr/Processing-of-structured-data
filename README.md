@@ -24,7 +24,7 @@ I HAVE KEPT HIS COMMENTS
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -61,7 +61,7 @@ I HAVE KEPT HIS COMMENTS
       <a href="#about-the-project">About The Project</a>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#requirements">Requirements</a>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -82,20 +82,16 @@ I HAVE KEPT HIS COMMENTS
 It's our project for Processing of structured data. It basically analyzes data from large stackexchange and creates cool diagrams. We explain everything in the video above. Click on a photo and it will redirect you to youtube. 
 
 
-# IiAD-PDU-PD3
-Processing of structured data - project 3.
-Copyright © 2021 Patryk Rakus, Jan Skwarek, Daniel Tytkowski. All rights reserved. Do not redistribute. Do not reproduce or use in any manner whatsoever without the express written permission.  
-Email: janskwarek@protonmail.ch
-
-# Requirements
-GNU R version 4 https://www.r-project.org/  
-Package stringi https://cran.r-project.org/web/packages/stringi/index.html  
-Package data.table https://cran.r-project.org/web/packages/data.table/index.html  
-Package XML https://cran.r-project.org/web/packages/XML/index.html  
-gaming.stackexchange.com.7z https://archive.org/details/stackexchange  
-beer.stackexchange.com.7z https://archive.org/details/stackexchange  
-health.stackexchange.com.7z https://archive.org/details/stackexchange  
-any integrated development environment for R (we recommend using RStudio) https://www.rstudio.com/
+<!-- REQUIREMENTS -->
+## Requirements
+* [GNU R version 4](https://www.r-project.org/)
+* [Package stringi](https://cran.r-project.org/web/packages/stringi/index.html)
+* [Package data.table](https://cran.r-project.org/web/packages/data.table/index.html)
+* [Package XML](https://cran.r-project.org/web/packages/XML/index.html)
+* [gaming.stackexchange.com.7z](https://archive.org/details/stackexchange)
+* [beer.stackexchange.com.7z](https://archive.org/details/stackexchange)
+* [health.stackexchange.com.7z](https://archive.org/details/stackexchange)
+* [any integrated development environment for R (we recommend using RStudio)](https://www.rstudio.com/)
 
 # Tutorial
 1. Download/clone all files from this repository.
@@ -141,8 +137,6 @@ Daniel Tytkowski (Email:)
 [issues-url]: https://github.com/janskwr/IiAD-PDU-PD3/issues
 [license-shield]: https://img.shields.io/github/license/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
 [license-url]: https://github.com/janskwr/IiAD-PDU-PD3/blob/master/LICENSE.txt
-<!--
-[linkedin-shield]: [example] https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: [example] https://linkedin.com/in/othneildrew
--->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/jan-skwarek-87b01419b/
 [product-screenshot]: images/screenshot.png
