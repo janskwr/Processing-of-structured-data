@@ -12,6 +12,23 @@ gaming.stackexchange.com.7z https://archive.org/details/stackexchange
 beer.stackexchange.com.7z https://archive.org/details/stackexchange  
 health.stackexchange.com.7z https://archive.org/details/stackexchange
 
+# Tutorial
+1. Download/clone all files from this repository.
+2. Open folder with in terminal.
+3. Type:
+```console
+./requirements.sh
+```
+4. If it doesn't work try:
+```console
+sudo chmod +x requirements.sh
+```
+   and then again:
+```console
+./requirements.sh
+```
+5. Now you can open and use our R program with full functionality!
+
 # Authors
 Patryk Rakus (Email:)  
 Jan Skwarek (Email: janskwarek@protonmail.ch)  
