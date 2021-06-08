@@ -104,7 +104,8 @@ It's our project for Processing of structured data. It basically analyzes data f
    ```bash
    ./requirements.sh
    ```
-4. If it doesn't work try:
+   Don't worry! It will ask for your permission before installation of each package.
+4. If it doesn't work, try:
    ```bash
    sudo chmod +x requirements.sh
    ./requirements.sh
