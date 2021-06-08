@@ -63,12 +63,11 @@ I HAVE KEPT HIS COMMENTS
     <li>
       <a href="#requirements">Requirements</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#installation">Installation</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#authors">Authors</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -84,6 +83,7 @@ It's our project for Processing of structured data. It basically analyzes data f
 
 <!-- REQUIREMENTS -->
 ## Requirements
+
 * [GNU R version 4](https://www.r-project.org/)
 * [Package stringi](https://cran.r-project.org/web/packages/stringi/index.html)
 * [Package data.table](https://cran.r-project.org/web/packages/data.table/index.html)
@@ -93,7 +93,11 @@ It's our project for Processing of structured data. It basically analyzes data f
 * [health.stackexchange.com.7z](https://archive.org/details/stackexchange)
 * [any integrated development environment for R (we recommend using RStudio)](https://www.rstudio.com/)
 
-# Tutorial
+
+
+<!-- INSTALLATION -->
+## Installation
+
 1. Download/clone all files from this repository.
 2. Open folder with files in terminal.
 3. Type:
@@ -116,10 +120,45 @@ health.stackexchange.com.7z ---> health_stackexchange
 ```
 6. Now you can open and use our R program with full functionality!
 
-# Authors
-Patryk Rakus (Email:)  
-Jan Skwarek (Email: janskwarek@protonmail.ch)  
-Daniel Tytkowski (Email:)
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- LICENSE -->
+## Authors
+
+* [Patryk Rakus](https://github.com/rakusp)
+* [Jan Skwarek](https://github.com/janskwr)
+* [Daniel Tytkowski](https://github.com/tytkowskid)
+
+
+
+<!-- CONTACT -->
+## Contact
+
+* Jan Skwarek - janskwarek@protonmail.ch - [Instagram](https://www.instagram.com/janskwr/) - [Facebook](https://www.facebook.com/jan.skwarek) - [LinkedIn](https://www.linkedin.com/in/jan-skwarek-87b01419b/)
+* Daniel Tytkowski
+* Patryk Rakus
+
+Project Link: [https://github.com/janskwr/IiAD-PDU-PD3](https://github.com/janskwr/IiAD-PDU-PD3)
 
 
 
