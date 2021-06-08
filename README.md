@@ -153,7 +153,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 * Jan Skwarek - janskwarek@protonmail.ch - [Instagram](https://www.instagram.com/janskwr/) - [Facebook](https://www.facebook.com/jan.skwarek) - [LinkedIn](https://www.linkedin.com/in/jan-skwarek-87b01419b/)
-* Daniel Tytkowski
+* Daniel Tytkowski - danielek.tytkowski@gmail.com - [Instagram](https://www.instagram.com/djtajkowski/)
 * Patryk Rakus - patryk.rakus7@gmail.com - [Instagram](https://www.instagram.com/patrykrakus/) - [Facebook](https://www.facebook.com/profile.php?id=100007654456693)
 
 Project Link: [https://github.com/janskwr/IiAD-PDU-PD3](https://github.com/janskwr/IiAD-PDU-PD3)
