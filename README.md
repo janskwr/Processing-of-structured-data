@@ -1,3 +1,14 @@
+
+<!-- PROJECT SHIELDS -->
+<!--
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
+
 # IiAD-PDU-PD3
 Processing of structured data - project 3.
 Copyright © 2021 Patryk Rakus, Jan Skwarek, Daniel Tytkowski. All rights reserved. Do not redistribute. Do not reproduce or use in any manner whatsoever without the express written permission.  
@@ -40,3 +51,25 @@ health.stackexchange.com.7z ---> health_stackexchange
 Patryk Rakus (Email:)  
 Jan Skwarek (Email: janskwarek@protonmail.ch)  
 Daniel Tytkowski (Email:)
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
+[contributors-url]: https://github.com/janskwr/IiAD-PDU-PD3/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
+[forks-url]: https://github.com/janskwr/IiAD-PDU-PD3/network/members
+[stars-shield]: https://img.shields.io/github/stars/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
+[stars-url]: https://github.com/janskwr/IiAD-PDU-PD3/stargazers
+[issues-shield]: https://img.shields.io/github/issues/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
+[issues-url]: https://github.com/janskwr/IiAD-PDU-PD3/issues
+[license-shield]: https://img.shields.io/github/license/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
+[license-url]: https://github.com/janskwr/IiAD-PDU-PD3/blob/master/LICENSE.txt
+<!--
+[linkedin-shield]: [example] https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: [example] https://linkedin.com/in/othneildrew
+[product-screenshot]: [example] images/screenshot.png
+-->
