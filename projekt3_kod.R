@@ -254,7 +254,7 @@ activity_hours <- function(Posts, Comments) {
 
 # Ustawiamy wykres.
 plot_activity <- function(Activity) {
-  barplot(Activity$NumberOfPostsAndComms, names.arg = Activity$CreationHour,col = c('red','green'), xlab = "Godzina utworzenia postu lub komentarza", ylab = "Ilosc", space = 0)
+  barplot(Activity$NumberOfPostsAndComms, names.arg = Activity$CreationHour,col = c('cyan','green'), xlab = "Godzina utworzenia postu lub komentarza", ylab = "Ilosc", space = 0)
 }
 
 
@@ -298,7 +298,7 @@ most_answers_hours <- function(Posts) {
 
 # Projektujemy wykres.
 most_answers_plot <- function(anserwsHours) {
-  barplot(anserwsHours$N, names.arg = anserwsHours$CreationHour,col = c('red','green'), xlab = "Godzina udzielenia odpowiedźi", ylab = "Ilosc", space = 0, axisnames = TRUE)
+  barplot(anserwsHours$N, names.arg = anserwsHours$CreationHour,col = c('cyan','green'), xlab = "Godzina udzielenia odpowiedźi", ylab = "Ilosc", space = 0, axisnames = TRUE)
 }
 
 
