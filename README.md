@@ -101,19 +101,19 @@ It's our project for Processing of structured data. It basically analyzes data f
 1. Download/clone all files from this repository.
 2. Open folder with files in terminal.
 3. Type:
-```console
+```bash
 ./requirements.sh
 ```
 4. If it doesn't work try:
-```console
+```bash
 sudo chmod +x requirements.sh
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and then again:
-```console
+```bash
 ./requirements.sh
 ```
 5. Unpack 7z folders with data and place them in appropriately named folders created inside project directory:
-```console
+```bash
 gaming.stackexchange.com.7z ---> gaming_stackexchange
 beer.stackexchange.com.7z ---> beer_stackexchange
 health.stackexchange.com.7z ---> health_stackexchange
