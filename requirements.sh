@@ -6,12 +6,48 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 else
     echo OK.
 fi
-sudo su - -c "R -e \"install.packages('stringi', repos='http://cran.rstudio.com/')\""
-sudo su - -c "R -e \"install.packages('data.table', repos='http://cran.rstudio.com/')\""
-sudo su - -c "R -e \"install.packages('XML', repos='http://cran.rstudio.com/')\""
-sudo wget "https://archive.org/download/stackexchange/beer.stackexchange.com.7z"
-sudo wget "https://archive.org/download/stackexchange/gaming.stackexchange.com.7z"
-sudo wget "https://archive.org/download/stackexchange/health.stackexchange.com.7z"
+echo -n "Do you want to install Package stringi (y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    sudo su - -c "R -e \"install.packages('stringi', repos='http://cran.rstudio.com/')\""
+else
+    echo OK.
+fi
+echo -n "Do you want to install Package data.table (y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    sudo su - -c "R -e \"install.packages('data.table', repos='http://cran.rstudio.com/')\""
+else
+    echo OK.
+fi
+echo -n "Do you want to install Package XML (y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    sudo su - -c "R -e \"install.packages('XML', repos='http://cran.rstudio.com/')\""
+else
+    echo OK.
+fi
+echo -n "Do you want to download stackexchange data about beer (y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    sudo wget "https://archive.org/download/stackexchange/beer.stackexchange.com.7z"
+else
+    echo OK.
+fi
+echo -n "Do you want to download stackexchange data about gaming (y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    sudo wget "https://archive.org/download/stackexchange/gaming.stackexchange.com.7z"
+else
+    echo OK.
+fi
+echo -n "Do you want to download stackexchange data about health (y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    sudo wget "https://archive.org/download/stackexchange/health.stackexchange.com.7z"
+else
+    echo OK.
+fi
 echo -n "Do you want to install RStudio (y/n)? "
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
