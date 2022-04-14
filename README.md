@@ -31,23 +31,23 @@ I HAVE KEPT HIS COMMENTS
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/janskwr/IiAD-PDU-PD3">
+  <a href="https://github.com/janskwr/Processing-of-structured-data">
     <img src="images/logo.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">IiAD-PDU-PD3</h3>
+  <h3 align="center">Processing-of-structured-data</h3>
 
   <p align="center">
     Our project for Processing of structured data!
     <br />
-    <a href="https://github.com/janskwr/IiAD-PDU-PD3"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/janskwr/Processing-of-structured-data"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/janskwr/IiAD-PDU-PD3">View Demo</a>
+    <a href="https://github.com/janskwr/Processing-of-structured-data">View Demo</a>
     ·
-    <a href="https://github.com/janskwr/IiAD-PDU-PD3/issues">Report Bug</a>
+    <a href="https://github.com/janskwr/Processing-of-structured-data/issues">Report Bug</a>
     ·
-    <a href="https://github.com/janskwr/IiAD-PDU-PD3/issues">Request Feature</a>
+    <a href="https://github.com/janskwr/Processing-of-structured-data/issues">Request Feature</a>
   </p>
 </p>
 
@@ -156,7 +156,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * Daniel Tytkowski - danielek.tytkowski@gmail.com - [Instagram](https://www.instagram.com/djtajkowski/)
 * Patryk Rakus - patryk.rakus7@gmail.com - [Instagram](https://www.instagram.com/patrykrakus/) - [Facebook](https://www.facebook.com/profile.php?id=100007654456693)
 
-Project Link: [https://github.com/janskwr/IiAD-PDU-PD3](https://github.com/janskwr/IiAD-PDU-PD3)
+Project Link: [https://github.com/janskwr/Processing-of-structured-data](https://github.com/janskwr/Processing-of-structured-data)
 
 
 
@@ -164,16 +164,16 @@ Project Link: [https://github.com/janskwr/IiAD-PDU-PD3](https://github.com/jansk
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
-[contributors-url]: https://github.com/janskwr/IiAD-PDU-PD3/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
-[forks-url]: https://github.com/janskwr/IiAD-PDU-PD3/network/members
-[stars-shield]: https://img.shields.io/github/stars/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
-[stars-url]: https://github.com/janskwr/IiAD-PDU-PD3/stargazers
-[issues-shield]: https://img.shields.io/github/issues/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
-[issues-url]: https://github.com/janskwr/IiAD-PDU-PD3/issues
-[license-shield]: https://img.shields.io/github/license/janskwr/IiAD-PDU-PD3.svg?style=for-the-badge
-[license-url]: https://github.com/janskwr/IiAD-PDU-PD3/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/janskwr/Processing-of-structured-data.svg?style=for-the-badge
+[contributors-url]: https://github.com/janskwr/Processing-of-structured-data/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/janskwr/Processing-of-structured-data.svg?style=for-the-badge
+[forks-url]: https://github.com/janskwr/Processing-of-structured-data/network/members
+[stars-shield]: https://img.shields.io/github/stars/janskwr/Processing-of-structured-data.svg?style=for-the-badge
+[stars-url]: https://github.com/janskwr/Processing-of-structured-data/stargazers
+[issues-shield]: https://img.shields.io/github/issues/janskwr/Processing-of-structured-data.svg?style=for-the-badge
+[issues-url]: https://github.com/janskwr/Processing-of-structured-data/issues
+[license-shield]: https://img.shields.io/github/license/janskwr/Processing-of-structured-data.svg?style=for-the-badge
+[license-url]: https://github.com/janskwr/Processing-of-structured-data/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jan-skwarek-87b01419b/
 [product-screenshot]: images/screenshot.png
