@@ -76,7 +76,10 @@ I HAVE KEPT HIS COMMENTS
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Our analysis ][product-screenshot]](https://youtu.be/FpGE3hl8ssc "Our analysis")
+<!--
+*** [![Our analysis ][product-screenshot]](https://youtu.be/FpGE3hl8ssc "Our analysis")
+-->
+[![Our analysis ][product-screenshot]](https://youtu.be/dQw4w9WgXcQ "Our analysis")
 
 It's our project for Processing of structured data. It basically analyzes large data from stackexchange and creates cool diagrams. We explain everything in the video above. Click on a photo and it will redirect you to youtube. 
 
